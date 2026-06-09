@@ -1,3 +1,5 @@
+const appBaseURL = process.env.NUXT_APP_BASE_URL || '/'
+
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
@@ -8,7 +10,7 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: appBaseURL,
     head: {
       htmlAttrs: {
         lang: 'de'
@@ -34,7 +36,7 @@ export default defineNuxtConfig({
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/jpeg', href: '/IMG-20250708-WA0002.jpg' }
+        { rel: 'icon', type: 'image/jpeg', href: `${appBaseURL}IMG-20250708-WA0002.jpg` }
       ]
     }
   },

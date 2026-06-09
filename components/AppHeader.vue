@@ -43,9 +43,11 @@
 </template>
 
 <script setup lang="ts">
+import { withBase } from 'ufo'
 import { company, navigation } from '~/data/site'
 
-const brandLogo = '/IMG-20250708-WA0002.jpg'
+const { app } = useRuntimeConfig()
+const brandLogo = withBase('/IMG-20250708-WA0002.jpg', app.baseURL)
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 

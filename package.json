@@ -2,6 +2,7 @@
   "name": "induva-website-v2",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
   "description": "Redesigned Induva UG website built as a clean standalone Nuxt repository.",
   "scripts": {
     "build": "nuxt build",
@@ -11,6 +12,6 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.8.0"
+    "nuxt": "3.17.7"
   }
 }

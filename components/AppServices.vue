@@ -11,7 +11,7 @@
       </div>
 
       <div class="card-grid">
-        <article v-for="service in services" :key="service.title" class="service-card">
+        <article v-for="service in resolvedServices" :key="service.title" class="service-card">
           <img class="service-card__image" :src="service.image" :alt="service.title">
           <div class="service-card__body">
             <h3>{{ service.title }}</h3>
@@ -25,6 +25,14 @@
 </template>
 
 <script setup lang="ts">
+import { withBase } from 'ufo'
 import { services } from '~/data/site'
-</script>
 
+const { app } = useRuntimeConfig()
+const resolvedServices = computed(() =>
+  services.map((service) => ({
+    ...service,
+    image: withBase(service.image, app.baseURL)
+  }))
+)
+</script>

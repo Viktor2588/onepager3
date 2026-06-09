@@ -11,7 +11,7 @@
       </div>
 
       <div class="card-grid">
-        <article v-for="study in caseStudies" :key="study.title" class="reference-card">
+        <article v-for="study in resolvedCaseStudies" :key="study.title" class="reference-card">
           <img class="reference-card__image" :src="study.image" :alt="study.title">
           <div class="reference-card__body">
             <h3>{{ study.title }}</h3>
@@ -27,6 +27,14 @@
 </template>
 
 <script setup lang="ts">
+import { withBase } from 'ufo'
 import { caseStudies } from '~/data/site'
-</script>
 
+const { app } = useRuntimeConfig()
+const resolvedCaseStudies = computed(() =>
+  caseStudies.map((study) => ({
+    ...study,
+    image: withBase(study.image, app.baseURL)
+  }))
+)
+</script>

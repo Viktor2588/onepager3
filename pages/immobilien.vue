@@ -12,7 +12,7 @@
           Wenn Flaechen, Inventar, Material und Termine zusammenhaengen, braucht es eine
           strukturierte Abwicklung. Genau darauf ist diese Seite ausgerichtet.
         </p>
-        <a class="button" href="/#kontakt">Immobilienprojekt anfragen</a>
+        <NuxtLink class="button" to="/#kontakt">Immobilienprojekt anfragen</NuxtLink>
       </div>
     </section>
 
@@ -66,9 +66,11 @@
 </template>
 
 <script setup lang="ts">
+import { withBase } from 'ufo'
 import { company, realEstateBenefits, realEstateSteps } from '~/data/site'
 
-const heroImage = '/img/IMG-20250714-Immobilien.jpg'
+const { app } = useRuntimeConfig()
+const heroImage = withBase('/img/IMG-20250714-Immobilien.jpg', app.baseURL)
 
 useHead({
   title: 'Immobilienprojekte - Induva UG',

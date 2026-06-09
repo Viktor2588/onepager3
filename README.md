@@ -10,15 +10,20 @@ Neu aufgesetzte Nuxt-Website fuer Induva UG mit klarerer Positionierung, staerke
 ## Entwicklung
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Build
 
 ```bash
-npm run generate
+NUXT_APP_BASE_URL=/onepager3/ pnpm build
 ```
+
+## Deployment
+
+- GitHub Pages wird ueber `.github/workflows/deploy.yml` aus dem Branch `main` deployed.
+- Fuer das Projekt-Repo muss `NUXT_APP_BASE_URL=/onepager3/` gesetzt sein, damit Assets und Routen unter dem Repo-Pfad funktionieren.
 
 ## Hinweise
 

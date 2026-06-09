@@ -35,5 +35,8 @@
 </template>
 
 <script setup lang="ts">
-const heroImage = '/img/index-background.jpg'
+import { withBase } from 'ufo'
+
+const { app } = useRuntimeConfig()
+const heroImage = withBase('/img/index-background.jpg', app.baseURL)
 </script>
