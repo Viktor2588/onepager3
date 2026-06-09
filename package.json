@@ -1,0 +1,16 @@
+{
+  "name": "induva-website-v2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Redesigned Induva UG website built as a clean standalone Nuxt repository.",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "^3.8.0"
+  }
+}
