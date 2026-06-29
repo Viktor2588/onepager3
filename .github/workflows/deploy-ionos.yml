@@ -84,20 +84,18 @@ jobs:
           IONOS_SFTP_HOST: access-5020611492.webspace-host.com
           IONOS_SFTP_PORT: '22'
           IONOS_SFTP_USERNAME: ${{ secrets.IONOS_SFTP_USERNAME }}
-          IONOS_SFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
+          LFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
         run: |
-          if [ -z "$IONOS_SFTP_USERNAME" ] || [ -z "$IONOS_SFTP_PASSWORD" ]; then
+          if [ -z "$IONOS_SFTP_USERNAME" ] || [ -z "$LFTP_PASSWORD" ]; then
             echo "::error::IONOS SFTP credentials are not configured."
             exit 1
           fi
 
-          printf 'machine %s\nlogin %s\npassword %s\n' \
-            "$IONOS_SFTP_HOST" \
-            "$IONOS_SFTP_USERNAME" \
-            "$IONOS_SFTP_PASSWORD" > "$HOME/.netrc"
-          chmod 600 "$HOME/.netrc"
-
-          lftp "sftp://${IONOS_SFTP_HOST}:${IONOS_SFTP_PORT}" <<'LFTP_COMMANDS'
+          lftp \
+            --user "$IONOS_SFTP_USERNAME" \
+            --env-password \
+            -p "$IONOS_SFTP_PORT" \
+            "sftp://${IONOS_SFTP_HOST}" <<'LFTP_COMMANDS'
           set cmd:fail-exit yes
           set net:max-retries 2
           set net:timeout 20
