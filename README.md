@@ -22,8 +22,15 @@ NUXT_APP_BASE_URL=/onepager3/ pnpm build
 
 ## Deployment
 
-- GitHub Pages wird ueber `.github/workflows/deploy.yml` aus dem Branch `main` deployed.
-- Fuer das Projekt-Repo muss `NUXT_APP_BASE_URL=/onepager3/` gesetzt sein, damit Assets und Routen unter dem Repo-Pfad funktionieren.
+- GitHub Pages wird ueber `.github/workflows/deploy.yml` bei Pushes nach
+  `main` deployed. Fuer dieses Preview-Deployment wird
+  `NUXT_APP_BASE_URL=/onepager3/` verwendet.
+- Das IONOS-Produktionsdeployment wird manuell ueber den GitHub-Workflow
+  `Deploy to IONOS` gestartet. Es erzeugt einen Build mit der Basis-URL `/`
+  und synchronisiert den Inhalt von `.output/public/` in das Verzeichnis
+  `/induva-website/` auf dem Webspace.
+- Fuer IONOS muessen die Repository-Secrets `IONOS_SFTP_USERNAME` und
+  `IONOS_SFTP_PASSWORD` konfiguriert sein.
 
 ## Hinweise
 
