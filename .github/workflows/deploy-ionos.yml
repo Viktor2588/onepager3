@@ -108,7 +108,6 @@ jobs:
           set net:timeout 20
           set sftp:auto-confirm no
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
-          mkdir -p ./induva-website
           put ${probe_file} -o ./induva-website/${probe_name}
           bye
           LFTP_COMMANDS
@@ -180,7 +179,6 @@ jobs:
           set net:timeout 20
           set sftp:auto-confirm no
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
-          mkdir -p ./induva-website
           mirror --reverse --delete --parallel=4 --verbose --exclude-glob .well-known/ .output/public/ ./induva-website/
           bye
           LFTP_COMMANDS
