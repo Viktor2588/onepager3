@@ -51,7 +51,7 @@ jobs:
       - name: Install deployment tools
         run: |
           sudo apt-get update
-          sudo apt-get install --yes apache2-utils lftp sshpass
+          sudo apt-get install --yes apache2-utils lftp
 
       - name: Verify IONOS host key
         env:
@@ -84,41 +84,77 @@ jobs:
           IONOS_SFTP_HOST: access-5020611492.webspace-host.com
           IONOS_SFTP_PORT: '22'
           IONOS_SFTP_USERNAME: ${{ secrets.IONOS_SFTP_USERNAME }}
-          IONOS_SFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
+          IONOS_SITE_URL: http://s1099317312.online.de
+          LFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
           BASIC_AUTH_USER: Dark
           BASIC_AUTH_PASSWORD: Dante
         run: |
-          if [ -z "$IONOS_SFTP_USERNAME" ] || [ -z "$IONOS_SFTP_PASSWORD" ]; then
+          if [ -z "$IONOS_SFTP_USERNAME" ] || [ -z "$LFTP_PASSWORD" ]; then
             echo "::error::IONOS SFTP credentials are not configured."
             exit 1
           fi
 
-          export SSHPASS="$IONOS_SFTP_PASSWORD"
-          remote_home="$(
-            sshpass -e ssh \
-              -p "$IONOS_SFTP_PORT" \
-              -o StrictHostKeyChecking=yes \
-              -o PreferredAuthentications=password,keyboard-interactive \
-              -o PubkeyAuthentication=no \
-              "$IONOS_SFTP_USERNAME@$IONOS_SFTP_HOST" \
-              'pwd -P'
-          )"
+          probe_name="induva-path-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.php"
+          probe_file=".output/public/${probe_name}"
+          printf '%s\n' '<?php header("Content-Type: text/plain"); echo __DIR__; ?>' > "$probe_file"
 
-          case "$remote_home" in
-            /*) ;;
-            *)
-              echo "::error::Could not determine the absolute IONOS webspace path."
-              exit 1
-              ;;
-          esac
+          lftp \
+            --user "$IONOS_SFTP_USERNAME" \
+            --env-password \
+            -p "$IONOS_SFTP_PORT" \
+            "sftp://${IONOS_SFTP_HOST}" <<LFTP_COMMANDS
+          set cmd:fail-exit yes
+          set net:max-retries 2
+          set net:timeout 20
+          set sftp:auto-confirm no
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+          mkdir -p ./induva-website
+          put ${probe_file} -o ./induva-website/${probe_name}
+          bye
+          LFTP_COMMANDS
+
+          set +e
+          remote_site_path="$(
+            curl \
+              --fail \
+              --silent \
+              --show-error \
+              --max-time 30 \
+              "${IONOS_SITE_URL}/${probe_name}"
+          )"
+          probe_status=$?
+          set -e
+
+          lftp \
+            --user "$IONOS_SFTP_USERNAME" \
+            --env-password \
+            -p "$IONOS_SFTP_PORT" \
+            "sftp://${IONOS_SFTP_HOST}" <<LFTP_COMMANDS
+          set cmd:fail-exit yes
+          set sftp:auto-confirm no
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+          rm ./induva-website/${probe_name}
+          bye
+          LFTP_COMMANDS
+          rm --force "$probe_file"
+
+          if [ "$probe_status" -ne 0 ]; then
+            echo "::error::Could not query the IONOS webspace path via the temporary probe."
+            exit 1
+          fi
+
+          if [[ ! "$remote_site_path" =~ ^/[A-Za-z0-9._/-]+/induva-website$ ]]; then
+            echo "::error::IONOS returned an unexpected webspace path."
+            exit 1
+          fi
 
           printf '%s\n' "$BASIC_AUTH_PASSWORD" |
-            htpasswd -ciB .output/.induva-website.htpasswd "$BASIC_AUTH_USER"
+            htpasswd -ciB .output/public/.htpasswd "$BASIC_AUTH_USER"
 
           cat > .output/public/.htaccess <<HTACCESS
           AuthType Basic
           AuthName "Induva DEV"
-          AuthUserFile ${remote_home}/.induva-website.htpasswd
+          AuthUserFile ${remote_site_path}/.htpasswd
           Require user ${BASIC_AUTH_USER}
           HTACCESS
 
@@ -144,7 +180,6 @@ jobs:
           set net:timeout 20
           set sftp:auto-confirm no
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
-          put .output/.induva-website.htpasswd -o ./.induva-website.htpasswd
           mkdir -p ./induva-website
           mirror --reverse --delete --parallel=4 --verbose --exclude-glob .well-known/ .output/public/ ./induva-website/
           bye
