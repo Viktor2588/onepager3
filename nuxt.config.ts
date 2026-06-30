@@ -3,6 +3,10 @@ const appBaseURL = process.env.NUXT_APP_BASE_URL || '/'
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
+  runtimeConfig: {
+    basicAuthUser: process.env.NUXT_BASIC_AUTH_USER || 'Dark',
+    basicAuthPassword: process.env.NUXT_BASIC_AUTH_PASSWORD || 'Dante'
+  },
   nitro: {
     preset: 'github-pages',
     prerender: {

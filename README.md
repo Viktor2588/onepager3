@@ -14,6 +14,15 @@ pnpm install
 pnpm dev
 ```
 
+Der lokale DEV-Server ist voruebergehend mit HTTP Basic Auth geschuetzt:
+
+- Benutzer: `Dark`
+- Passwort: `Dante`
+
+Die Zugangsdaten koennen bei Bedarf ueber `NUXT_BASIC_AUTH_USER` und
+`NUXT_BASIC_AUTH_PASSWORD` ueberschrieben werden. Der Schutz ist nur im
+DEV-Modus aktiv und wird nicht in statischen Builds aktiviert.
+
 ## Build
 
 ```bash
