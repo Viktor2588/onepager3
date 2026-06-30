@@ -37,7 +37,8 @@ NUXT_APP_BASE_URL=/onepager3/ pnpm build
 - Das IONOS-Produktionsdeployment wird manuell ueber den GitHub-Workflow
   `Deploy to IONOS` gestartet. Es erzeugt einen Build mit der Basis-URL `/`
   und synchronisiert den Inhalt von `.output/public/` in das Verzeichnis
-  `/induva-website/` auf dem Webspace.
+  `/induva-website/` auf dem Webspace. Das Deployment erzeugt voruebergehend
+  eine serverseitige Apache-Basic-Auth-Konfiguration fuer `Dark` / `Dante`.
 - Fuer IONOS muessen die Repository-Secrets `IONOS_SFTP_USERNAME` und
   `IONOS_SFTP_PASSWORD` konfiguriert sein.
 
