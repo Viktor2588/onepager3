@@ -119,6 +119,7 @@ jobs:
               --silent \
               --show-error \
               --max-time 30 \
+              --user "${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}" \
               "${IONOS_SITE_URL}/${probe_name}"
           )"
           probe_status=$?
