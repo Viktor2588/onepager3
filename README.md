@@ -23,6 +23,20 @@ Die Zugangsdaten koennen bei Bedarf ueber `NUXT_BASIC_AUTH_USER` und
 `NUXT_BASIC_AUTH_PASSWORD` ueberschrieben werden. Der Schutz ist nur im
 DEV-Modus aktiv und wird nicht in statischen Builds aktiviert.
 
+## Inhaltspflege (CMS)
+
+Alle Texte, Bilder und Kontaktdaten liegen in `content/site.json` und werden
+ueber Sveltia CMS unter `/admin` gepflegt (Formulare statt Code). Speichern im
+CMS erzeugt einen Commit auf `main`, der das GitHub-Pages-Deployment
+automatisch ausloest.
+
+- Lokal testen: `pnpm dev`, dann `http://localhost:3000/admin` oeffnen und
+  "Work with Local Repository" waehlen (Chrome/Edge).
+- Online: Login via GitHub. Redakteure brauchen einen GitHub-Account mit
+  Schreibzugriff auf dieses Repo. Der OAuth-Login laeuft ueber einen
+  Cloudflare Worker ([sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth)),
+  dessen URL als `base_url` in `public/admin/config.yml` eingetragen ist.
+
 ## Build
 
 ```bash

@@ -1,0 +1,179 @@
+{
+  "company": {
+    "brand": "Induva",
+    "legalName": "Induva UG",
+    "contactPerson": "Björn Kratz",
+    "phoneDisplay": "+49 (040) 525 60 50",
+    "phoneHref": "tel:+49405256050",
+    "email": "info@ht-kg.de",
+    "privacyEmail": "info@ht-kg.de",
+    "street": "Obere Tränke 3",
+    "city": "63110 Rodgau",
+    "country": "Deutschland",
+    "hours": "Mo-Fr 08:00-17:00 Uhr",
+    "slogan": "Industrieverwertung, Betriebsaufloesung und Recycling mit klarer Projektfuehrung."
+  },
+  "navigation": [
+    {
+      "label": "Leistungen",
+      "to": "/#leistungen"
+    },
+    {
+      "label": "Warum Induva",
+      "to": "/#warum-induva"
+    },
+    {
+      "label": "Referenzen",
+      "to": "/#referenzen"
+    },
+    {
+      "label": "Ablauf",
+      "to": "/#ablauf"
+    },
+    {
+      "label": "Immobilien",
+      "to": "/immobilien"
+    },
+    {
+      "label": "Kontakt",
+      "to": "/#kontakt"
+    }
+  ],
+  "trustItems": [
+    "Kurzfristige Erstbewertung",
+    "Dokumentierte Projektablaeufe",
+    "Wertorientierte Verwertung",
+    "Fester Ansprechpartner"
+  ],
+  "services": [
+    {
+      "title": "Industrieverwertung",
+      "description": "Wir bewerten, sichern und verwerten Maschinen, Anlagen und Produktionsmittel mit Fokus auf Werterhalt, Rueckbauplanung und nachvollziehbare Dokumentation.",
+      "result": "Mehr Transparenz in komplexen Stilllegungs- und Verwertungsprojekten.",
+      "image": "/img/IMG-20250714-Industrieverwertung.jpg"
+    },
+    {
+      "title": "Recycling & Entsorgung",
+      "description": "Von Metallfraktionen bis zu sensiblen Reststoffen koordinieren wir sortenreine Trennung, umweltgerechte Entsorgung und belastbare Nachweise.",
+      "result": "Saubere Materialstroeme statt ungeplanter Restkosten.",
+      "image": "/img/IMG-20250714-Recycling.jpg"
+    },
+    {
+      "title": "Betriebsaufloesung",
+      "description": "Wir strukturieren Betriebs- und Standortaufloesungen so, dass Inventar, Demontage, Logistik und Dokumentation in einem geordneten Ablauf zusammenlaufen.",
+      "result": "Weniger Reibungsverluste, weniger Stillstandsrisiko, klares Projektbild.",
+      "image": "/img/IMG-20250714-Firmen-&Betriebsauflösung.jpg"
+    },
+    {
+      "title": "Beratung & Analyse",
+      "description": "Vor jeder Massnahme schaffen wir eine belastbare Entscheidungsgrundlage: Bestandsaufnahme, Potenzialanalyse, Prioritaeten und realistischer Projektweg.",
+      "result": "Fruehe Klarheit fuer Budget, Umfang und zeitkritische Schritte.",
+      "image": "/img/IMG-20250714-Beratung&Analyse.jpg"
+    }
+  ],
+  "reasons": [
+    {
+      "title": "Klare Projektfuehrung",
+      "description": "Sie erhalten keinen Sammelbegriff wie \"wir kuemmern uns\", sondern einen nachvollziehbaren Ablauf mit Prioritaeten, Status und naechsten Schritten."
+    },
+    {
+      "title": "Verwertung vor Entsorgung",
+      "description": "Wo Substanz oder Marktwert vorhanden ist, denken wir erst in Sicherung und Verwertung und erst dann in Reststoffentsorgung."
+    },
+    {
+      "title": "Dokumentation fuer Entscheider",
+      "description": "Fotos, Projektstaende und Uebergaben werden so aufbereitet, dass interne Freigaben und externe Abstimmungen leichter werden."
+    },
+    {
+      "title": "Praxis fuer sensible Situationen",
+      "description": "Stilllegungen, Raeumungen und Umstrukturierungen brauchen eine ruhige, belastbare Umsetzung. Genau darauf ist die Seite jetzt ausgerichtet."
+    }
+  ],
+  "processSteps": [
+    {
+      "title": "1. Erstgespraech und Vor-Ort-Termin",
+      "description": "Wir klaeren Zielbild, Zeitfenster, Materiallage, Sicherheitsaspekte und kritische Rahmenbedingungen direkt zu Beginn."
+    },
+    {
+      "title": "2. Bewertung und Projektkonzept",
+      "description": "Sie erhalten eine priorisierte Einschaetzung, welche Positionen verwertet, getrennt, zurueckgebaut oder gesichert werden sollten."
+    },
+    {
+      "title": "3. Umsetzung mit fester Struktur",
+      "description": "Demontage, Logistik, Entsorgung und Kommunikation laufen ueber einen klaren Ablauf mit sichtbaren Verantwortlichkeiten."
+    },
+    {
+      "title": "4. Dokumentation und Nachweise",
+      "description": "Projektfortschritt, Materialwege und relevante Ergebnisse werden geordnet festgehalten und sauber uebergeben."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Produktionshalle im Rueckbau",
+      "image": "/img/IMG-20250714-FabrikhalleTransformation.jpg",
+      "description": "Strukturierte Demontage einer Hallenflaeche mit Fokus auf verwertbare Anlagenteile, klare Materialtrennung und abgestimmte Logistik.",
+      "metrics": [
+        "5.000 m² Projektflaeche",
+        "mehrstufige Materialtrennung",
+        "dokumentierte Uebergabe"
+      ]
+    },
+    {
+      "title": "Maschinen und mobile Technik",
+      "image": "/img/IMG-20250714-Fahrzeuge.jpg",
+      "description": "Bewertung und Verwertung von Fahrzeugen, Baumaschinen und mobilen Anlagen mit Blick auf Restwert, Zerlegung und Nachverfolgbarkeit.",
+      "metrics": [
+        "Anlagen + Fahrzeuge",
+        "wertorientierte Sicherung",
+        "abgestufte Verwertung"
+      ]
+    },
+    {
+      "title": "Immobilien- und Standortprojekt",
+      "image": "https://www.dkv.com/fotos/Farbige-Kloetzchen-bilden-das-Wort-TEST-1440_rdax_70.webp",
+      "description": "Bei Immobilienprojekten verbinden wir Rueckbau, Raeumung und Verwertungskonzept zu einer steuerbaren Gesamtmassnahme.",
+      "metrics": [
+        "Besichtigung vor Ort",
+        "klare Projektphasen",
+        "ein Ansprechpartner"
+      ]
+    }
+  ],
+  "industries": [
+    "Industriebetriebe und Produktionsstandorte",
+    "Insolvenz- und Nachfolgesituationen",
+    "Lager, Werkstaetten und Gewerbeflaechen",
+    "Fahrzeug- und Maschinenbestaende",
+    "Immobilienbezogene Raeumungs- und Verwertungsprojekte"
+  ],
+  "faqItems": [
+    {
+      "question": "Wann lohnt sich eine Erstbewertung?",
+      "answer": "Sobald Stilllegung, Betriebsumzug, Betriebsaufloesung oder eine groessere Raeumung im Raum steht. Fruehe Einschaetzungen vermeiden Fehlentscheidungen bei Zeitdruck."
+    },
+    {
+      "question": "Arbeitet Induva nur fuer Grossprojekte?",
+      "answer": "Nein. Relevant ist weniger die absolute Groesse als die Frage, ob Materialien, Technik, Flaechen oder Projektabhaengigkeiten geordnet bewertet und abgewickelt werden muessen."
+    },
+    {
+      "question": "Wie laeuft die Kontaktaufnahme auf dieser Website?",
+      "answer": "Das Formular bereitet Ihre Anfrage fuer Ihr E-Mail-Programm vor. So koennen Sie direkt mit allen Projektdaten Kontakt aufnehmen, ohne auf ein unverbundenes Demo-Formular zu treffen."
+    },
+    {
+      "question": "Unterstuetzt Induva auch Immobilienprojekte?",
+      "answer": "Ja. Fuer Gebaeude, Gewerbeflaechen und standortbezogene Raeumungen gibt es eine eigene Leistungsseite mit Fokus auf Bewertung, Rueckbau und strukturierte Umsetzung."
+    }
+  ],
+  "realEstateBenefits": [
+    "Bewertung und Strukturierung vor der eigentlichen Massnahme",
+    "Raeumung, Rueckbau und Materialtrennung aus einem Ablauf gedacht",
+    "Dokumentierte Projektstaende fuer Eigentuermer, Verwalter und weitere Beteiligte",
+    "Klare Schnittstelle zwischen Immobilie, Inventar und Verwertung"
+  ],
+  "realEstateSteps": [
+    "Besichtigung und Zielklaerung",
+    "Abgleich von Flaeche, Inventar und Aufwand",
+    "Projektkonzept fuer Rueckbau, Raeumung und Verwertung",
+    "Abwicklung mit fortlaufender Dokumentation"
+  ]
+}

@@ -1,0 +1,94 @@
+backend:
+  name: github
+  repo: Viktor2588/onepager3
+  branch: main
+  # TODO: nach Deploy des Auth-Workers eintragen, z. B. https://sveltia-cms-auth.<subdomain>.workers.dev
+  # base_url: https://DEINE-WORKER-URL.workers.dev
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: site
+    label: Website-Inhalte
+    files:
+      - name: inhalte
+        label: Alle Inhalte
+        file: content/site.json
+        format: json
+        fields:
+          - name: company
+            label: Firmendaten & Kontakt
+            widget: object
+            fields:
+              - { name: brand, label: Markenname, widget: string }
+              - { name: legalName, label: Firmenname (rechtlich), widget: string }
+              - { name: contactPerson, label: Ansprechpartner, widget: string }
+              - { name: phoneDisplay, label: Telefon (Anzeige), widget: string }
+              - { name: phoneHref, label: Telefon (Link, Format tel:+49...), widget: string, hint: 'Nur Ziffern nach tel:+, ohne Leerzeichen und Klammern' }
+              - { name: email, label: E-Mail, widget: string }
+              - { name: privacyEmail, label: E-Mail (Datenschutz), widget: string }
+              - { name: street, label: Strasse, widget: string }
+              - { name: city, label: PLZ und Ort, widget: string }
+              - { name: country, label: Land, widget: string }
+              - { name: hours, label: Erreichbarkeit, widget: string }
+              - { name: slogan, label: Slogan, widget: text }
+          - name: navigation
+            label: Navigation
+            widget: list
+            fields:
+              - { name: label, label: Bezeichnung, widget: string }
+              - { name: to, label: Ziel (Link), widget: string }
+          - name: trustItems
+            label: Vertrauens-Leiste
+            widget: list
+            field: { name: item, label: Punkt, widget: string }
+          - name: services
+            label: Leistungen
+            widget: list
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: description, label: Beschreibung, widget: text }
+              - { name: result, label: Ergebnis, widget: string }
+              - { name: image, label: Bild, widget: image }
+          - name: reasons
+            label: Warum Induva
+            widget: list
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: description, label: Beschreibung, widget: text }
+          - name: processSteps
+            label: Ablauf-Schritte
+            widget: list
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: description, label: Beschreibung, widget: text }
+          - name: caseStudies
+            label: Referenzen
+            widget: list
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: image, label: Bild, widget: image }
+              - { name: description, label: Beschreibung, widget: text }
+              - name: metrics
+                label: Kennzahlen
+                widget: list
+                field: { name: metric, label: Kennzahl, widget: string }
+          - name: industries
+            label: Branchen
+            widget: list
+            field: { name: item, label: Branche, widget: string }
+          - name: faqItems
+            label: FAQ
+            widget: list
+            fields:
+              - { name: question, label: Frage, widget: string }
+              - { name: answer, label: Antwort, widget: text }
+          - name: realEstateBenefits
+            label: Immobilien – Vorteile
+            widget: list
+            field: { name: item, label: Vorteil, widget: string }
+          - name: realEstateSteps
+            label: Immobilien – Ablauf
+            widget: list
+            field: { name: item, label: Schritt, widget: string }
