@@ -1,13 +1,13 @@
 {
   "company": {
     "brand": "Induva",
-    "legalName": "Induva UG 2",
+    "legalName": "Induva UG",
     "contactPerson": "Björn Kratz",
     "phoneDisplay": "+49 (040) 525 60 50",
     "phoneHref": "tel:+49405256050",
     "email": "info@ht-kg.de",
     "privacyEmail": "info@ht-kg.de",
-    "street": "Obere Tränke 6",
+    "street": "Obere Tränke 3",
     "city": "63110 Rodgau",
     "country": "Deutschland",
     "hours": "Mo-Fr 08:00-17:00 Uhr",
@@ -130,7 +130,7 @@
     },
     {
       "title": "Immobilien- und Standortprojekt",
-      "image": "https://www.dkv.com/fotos/Farbige-Kloetzchen-bilden-das-Wort-TEST-1440_rdax_70.webp",
+      "image": "/img/IMG-20250714-Immobilien.jpg",
       "description": "Bei Immobilienprojekten verbinden wir Rueckbau, Raeumung und Verwertungskonzept zu einer steuerbaren Gesamtmassnahme.",
       "metrics": [
         "Besichtigung vor Ort",
