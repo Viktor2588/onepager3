@@ -2,8 +2,7 @@ backend:
   name: github
   repo: Viktor2588/onepager3
   branch: main
-  # TODO: nach Deploy des Auth-Workers eintragen, z. B. https://sveltia-cms-auth.<subdomain>.workers.dev
-  # base_url: https://DEINE-WORKER-URL.workers.dev
+  base_url: https://sveltia-cms-auth.viktor2588.workers.dev
 
 media_folder: public/img
 public_folder: /img
