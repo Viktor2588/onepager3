@@ -156,6 +156,12 @@ jobs:
           AuthName "Induva DEV"
           AuthUserFile ${remote_site_path}/.htpasswd
           Require user ${BASIC_AUTH_USER}
+
+          <IfModule mod_headers.c>
+            <FilesMatch "\.html$">
+              Header set Cache-Control "no-cache"
+            </FilesMatch>
+          </IfModule>
           HTACCESS
 
       - name: Upload site over SFTP
