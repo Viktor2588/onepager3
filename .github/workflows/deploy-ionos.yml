@@ -160,8 +160,13 @@ jobs:
           Require user ${BASIC_AUTH_USER}
 
           <IfModule mod_headers.c>
-            <FilesMatch "\.html$">
+            # Inhalte (HTML, Nuxt-Payloads, CMS-Bilder): immer beim Server revalidieren
+            <FilesMatch "\.(html|json|jpe?g|png|webp|svg|gif|ico)$">
               Header set Cache-Control "no-cache"
+            </FilesMatch>
+            # Gehashte Build-Assets: ewig cachen, Dateiname aendert sich bei jedem Build
+            <FilesMatch "\.(js|css|woff2?)$">
+              Header set Cache-Control "public, max-age=31536000, immutable"
             </FilesMatch>
           </IfModule>
           HTACCESS
