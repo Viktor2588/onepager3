@@ -3,11 +3,10 @@
     <div class="container contact-layout">
       <div>
         <p class="eyebrow">Kontakt</p>
-        <h2>Projekt anfragen, Erstgespraech sichern, naechste Schritte klaeren.</h2>
+        <h2>Rufen Sie an oder schreiben Sie uns.</h2>
         <p class="contact-copy">
-          Statt eines Demo-Formulars bereitet die Website Ihre Anfrage direkt fuer
-          Ihr E-Mail-Programm vor. So startet die Kontaktaufnahme ohne unverbundene
-          Schein-Interaktion.
+          Beschreiben Sie kurz, worum es geht. Wir melden uns schnellstmöglich
+          und besprechen mit Ihnen die nächsten Schritte.
         </p>
 
         <div class="contact-cards">
@@ -25,18 +24,19 @@
           </article>
 
           <article class="contact-card">
-            <h3>Geeignet fuer</h3>
+            <h3>Wir helfen bei</h3>
             <ul class="plain-list">
-              <li>Stilllegung und Betriebsaufloesung</li>
-              <li>Raeumung und Rueckbau</li>
-              <li>Maschinen-, Anlagen- und Immobilienprojekte</li>
+              <li>Räumung und Entsorgung</li>
+              <li>Sicherstellung von Fahrzeugen</li>
+              <li>Verwertung von Fahrzeugen, Maschinen und Elektronik</li>
+              <li>Räumung von Immobilien</li>
             </ul>
           </article>
         </div>
       </div>
 
       <div class="mail-form-card">
-        <h3>Anfrage vorbereiten</h3>
+        <h3>Anfrage senden</h3>
         <form class="mail-form" @submit.prevent="handleSubmit">
           <label>
             Name *
@@ -61,14 +61,14 @@
           </label>
 
           <label>
-            Projektart *
+            Worum geht es? *
             <select v-model="form.topic">
-              <option disabled value="">Bitte waehlen</option>
-              <option>Industrieverwertung</option>
-              <option>Betriebsaufloesung</option>
-              <option>Recycling & Entsorgung</option>
-              <option>Immobilienprojekt</option>
-              <option>Beratung & Analyse</option>
+              <option disabled value="">Bitte wählen</option>
+              <option>Räumung & Entsorgung</option>
+              <option>Sicherstellung von Fahrzeugen</option>
+              <option>Verwertung</option>
+              <option>Immobilie</option>
+              <option>Sonstiges</option>
             </select>
             <span v-if="errors.topic" class="error-text">{{ errors.topic }}</span>
           </label>
@@ -81,16 +81,16 @@
 
           <label class="checkbox-field">
             <input v-model="form.consent" type="checkbox">
-            <span>Ich moechte per E-Mail kontaktiert werden und habe die Datenschutzhinweise gelesen. *</span>
+            <span>Ich möchte per E-Mail kontaktiert werden und habe die Datenschutzerklärung gelesen. *</span>
           </label>
           <span v-if="errors.consent" class="error-text">{{ errors.consent }}</span>
 
-          <button class="button" type="submit">E-Mail-Anfrage oeffnen</button>
+          <button class="button" type="submit">E-Mail-Anfrage öffnen</button>
           <p class="form-note">
-            Beim Absenden wird Ihr lokales E-Mail-Programm mit einer vorbereiteten Anfrage geoeffnet.
+            Beim Absenden wird Ihr lokales E-Mail-Programm mit einer vorbereiteten Anfrage geöffnet.
           </p>
           <p v-if="submitted" class="success-text">
-            Ihr E-Mail-Programm wurde vorbereitet. Falls nichts geoeffnet wurde, nutzen Sie bitte die Direktkontakte links.
+            Ihr E-Mail-Programm wurde geöffnet. Falls nicht, rufen Sie uns bitte an oder schreiben Sie direkt an die E-Mail-Adresse oben.
           </p>
         </form>
       </div>
@@ -134,7 +134,7 @@ const mailtoLink = computed(() => {
     form.message
   ]
 
-  const subject = `Projektanfrage: ${form.topic}`
+  const subject = `Anfrage: ${form.topic}`
   const body = lines.join('\n')
   return `mailto:${company.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 })
@@ -149,11 +149,11 @@ const validate = () => {
   if (!form.email) {
     errors.email = 'Bitte geben Sie eine E-Mail-Adresse an.'
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.email = 'Bitte geben Sie eine gueltige E-Mail-Adresse an.'
+    errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.'
   }
 
   if (!form.topic) {
-    errors.topic = 'Bitte waehlen Sie eine Projektart.'
+    errors.topic = 'Bitte wählen Sie aus, worum es geht.'
   }
 
   if (!form.message) {
@@ -161,7 +161,7 @@ const validate = () => {
   }
 
   if (!form.consent) {
-    errors.consent = 'Bitte bestaetigen Sie die Datenschutzhinweise.'
+    errors.consent = 'Bitte bestätigen Sie, dass Sie die Datenschutzerklärung gelesen haben.'
   }
 
   return Object.keys(errors).length === 0

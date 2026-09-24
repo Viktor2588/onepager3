@@ -19,13 +19,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'de'
       },
-      title: 'Induva UG - Industrieverwertung mit klarer Projektfuehrung',
+      title: 'Induva UG - Räumung, Entsorgung und Verwertung',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Induva UG unterstuetzt Unternehmen bei Industrieverwertung, Betriebsaufloesung, Recycling und Immobilienprojekten mit klaren Prozessen und dokumentierter Abwicklung.'
+          content: 'Induva UG aus Rodgau: Räumung von Büros, Lagern und Immobilien, Sicherstellung von Fahrzeugen und Verwertung von Fahrzeugen, Baumaschinen und Elektronik.'
         },
         { name: 'theme-color', content: '#17372a' },
         // GitHub Pages ist nur Dev-Vorschau, nicht indexieren
@@ -34,11 +34,11 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'Induva UG' },
         {
           property: 'og:title',
-          content: 'Induva UG - Industrieverwertung mit klarer Projektfuehrung'
+          content: 'Induva UG - Räumung, Entsorgung und Verwertung'
         },
         {
           property: 'og:description',
-          content: 'Industrieverwertung, Betriebsaufloesung, Recycling und Immobilienprojekte mit dokumentierter Abwicklung und festem Ansprechpartner.'
+          content: 'Induva UG aus Rodgau: Räumung von Büros, Lagern und Immobilien, Sicherstellung von Fahrzeugen und Verwertung von Fahrzeugen, Baumaschinen und Elektronik.'
         }
       ],
       link: [

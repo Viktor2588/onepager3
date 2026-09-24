@@ -56,27 +56,6 @@ collections:
             fields:
               - { name: title, label: Titel, widget: string }
               - { name: description, label: Beschreibung, widget: text }
-          - name: processSteps
-            label: Ablauf-Schritte
-            widget: list
-            fields:
-              - { name: title, label: Titel, widget: string }
-              - { name: description, label: Beschreibung, widget: text }
-          - name: caseStudies
-            label: Referenzen
-            widget: list
-            fields:
-              - { name: title, label: Titel, widget: string }
-              - { name: image, label: Bild, widget: image }
-              - { name: description, label: Beschreibung, widget: text }
-              - name: metrics
-                label: Kennzahlen
-                widget: list
-                field: { name: metric, label: Kennzahl, widget: string }
-          - name: industries
-            label: Branchen
-            widget: list
-            field: { name: item, label: Branche, widget: string }
           - name: faqItems
             label: FAQ
             widget: list
@@ -87,7 +66,3 @@ collections:
             label: Immobilien – Vorteile
             widget: list
             field: { name: item, label: Vorteil, widget: string }
-          - name: realEstateSteps
-            label: Immobilien – Ablauf
-            widget: list
-            field: { name: item, label: Schritt, widget: string }

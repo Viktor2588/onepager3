@@ -4,10 +4,6 @@
     <AppTrustBar />
     <AppServices />
     <AppReasons />
-    <AppReferences />
-    <AppProcess />
-    <AppIndustries />
-    <AppFaq />
     <AppContact />
   </main>
 </template>
@@ -43,12 +39,12 @@ const schema = {
 }
 
 useHead({
-  title: 'Induva UG - Industrieverwertung mit klarer Projektfuehrung',
+  title: 'Induva UG - Räumung, Entsorgung und Verwertung',
   meta: [
     {
       name: 'description',
       content:
-        'Induva UG unterstuetzt Unternehmen bei Industrieverwertung, Betriebsaufloesung, Recycling und Immobilienprojekten mit klaren Prozessen und dokumentierter Abwicklung.'
+        'Induva UG aus Rodgau: Räumung von Büros, Lagern und Immobilien, Sicherstellung von Fahrzeugen und Verwertung von Fahrzeugen, Baumaschinen und Elektronik.'
     }
   ],
   script: [

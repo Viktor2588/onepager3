@@ -122,6 +122,64 @@ main {
   padding: 5.5rem 0;
 }
 
+.section--compact {
+  padding: 3.5rem 0;
+}
+
+.section-heading--compact {
+  margin-bottom: 1.5rem;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reason-tile {
+  padding: 1.25rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.reason-tile h3 {
+  margin: 0.85rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.reason-tile p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.reason-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(212, 165, 116, 0.14);
+  color: var(--accent);
+}
+
+.reason-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.footer-faq {
+  margin-top: 2.5rem;
+}
+
+.footer-faq__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+}
+
 .section--surface {
   background: rgba(255, 255, 255, 0.03);
 }
@@ -603,8 +661,13 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .reason-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .trust-grid,
   .card-grid,
+  .footer-faq__list,
   .timeline,
   .industry-list {
     grid-template-columns: 1fr;
@@ -657,6 +720,10 @@ main {
   .button,
   .button--ghost {
     width: 100%;
+  }
+
+  .reason-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-actions,

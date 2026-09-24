@@ -1,33 +1,32 @@
 <template>
   <section class="hero">
     <div class="hero-media">
-      <img :src="heroImage" alt="Industrieumgebung und Verwertungsprojekt">
+      <img :src="heroImage" alt="Räumung und Verwertung">
     </div>
     <div class="hero-overlay" />
 
     <div class="container hero-content">
       <div class="hero-copy">
-        <p class="eyebrow">Industrieverwertung, Betriebsaufloesung, Recycling</p>
-        <h1>Komplexe Verwertungsprojekte brauchen klare Fuehrung statt nur starke Bilder.</h1>
+        <p class="eyebrow">Räumung · Entsorgung · Verwertung</p>
+        <h1>Wir räumen, entsorgen und verwerten – zuverlässig und unkompliziert.</h1>
         <p class="hero-text">
-          Induva unterstuetzt Unternehmen bei Rueckbau-, Raeumungs- und
-          Verwertungsprojekten mit strukturierter Bewertung, dokumentierter
-          Umsetzung und einem festen Ansprechpartner.
+          Wir räumen Büros, Lager und Immobilien, stellen Fahrzeuge sicher und verwerten,
+          was noch Wert hat – von Fahrzeugen und Baumaschinen bis zu Elektronik.
         </p>
 
         <div class="hero-actions">
-          <a class="button" href="#kontakt">Projekt anfragen</a>
-          <a class="button button--ghost" href="#referenzen">Referenzen ansehen</a>
+          <a class="button" href="#kontakt">Anfrage senden</a>
+          <a class="button button--ghost" href="#leistungen">Leistungen ansehen</a>
         </div>
       </div>
 
       <aside class="hero-panel">
-        <p class="eyebrow">Schneller Ueberblick</p>
+        <p class="eyebrow">Auf einen Blick</p>
         <ul class="check-list">
-          <li>Erstbewertung fuer Stilllegung, Aufloesung und Raeumung</li>
-          <li>Wertorientierte Verwertung vor unnoetiger Entsorgung</li>
-          <li>Dokumentation fuer Eigentuermer, Verwaltung und Entscheider</li>
-          <li>Immobilien- und Standortprojekte inklusive</li>
+          <li>Räumung von Büro-, Lager- und Gewerbeflächen</li>
+          <li>Sicherstellung und Abholung von Fahrzeugen</li>
+          <li>Verwertung von Fahrzeugen, Baumaschinen und Elektronik</li>
+          <li>Räumung von Immobilien</li>
         </ul>
       </aside>
     </div>

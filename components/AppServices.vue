@@ -2,11 +2,11 @@
   <section id="leistungen" class="section section--surface">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Leistungsbereiche</p>
-        <h2>Leistungen, die aus komplexen Situationen wieder ein steuerbares Projekt machen.</h2>
+        <p class="eyebrow">Leistungen</p>
+        <h2>Was wir für Sie erledigen.</h2>
         <p>
-          Die neue Website spricht nicht mehr nur ueber Motive und Bilder, sondern
-          ueber Ergebnis, Projektlogik und Entscheidungssicherheit.
+          Vom einzelnen Büro bis zum ganzen Lager, vom einzelnen Auto bis zur Baumaschine:
+          Wir räumen, entsorgen und verwerten – alles aus einer Hand.
         </p>
       </div>
 
