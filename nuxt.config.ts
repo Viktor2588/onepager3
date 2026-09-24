@@ -28,6 +28,8 @@ export default defineNuxtConfig({
           content: 'Induva UG unterstuetzt Unternehmen bei Industrieverwertung, Betriebsaufloesung, Recycling und Immobilienprojekten mit klaren Prozessen und dokumentierter Abwicklung.'
         },
         { name: 'theme-color', content: '#17372a' },
+        // GitHub Pages ist nur Dev-Vorschau, nicht indexieren
+        ...(process.env.NOINDEX ? [{ name: 'robots', content: 'noindex, nofollow' }] : []),
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Induva UG' },
         {

@@ -24,7 +24,7 @@ collections:
               - { name: legalName, label: Firmenname (rechtlich), widget: string }
               - { name: contactPerson, label: Ansprechpartner, widget: string }
               - { name: phoneDisplay, label: Telefon (Anzeige), widget: string }
-              - { name: phoneHref, label: Telefon (Link, Format tel:+49...), widget: string, hint: 'Nur Ziffern nach tel:+, ohne Leerzeichen und Klammern' }
+              - { name: phoneHref, label: Telefon (Link, Format tel:+49...), widget: string, hint: 'Nur Ziffern nach tel:+, ohne Leerzeichen und Klammern', pattern: ['^tel:\+[0-9]+$', 'Format: tel:+49 gefolgt von Ziffern, ohne Leerzeichen'] }
               - { name: email, label: E-Mail, widget: string }
               - { name: privacyEmail, label: E-Mail (Datenschutz), widget: string }
               - { name: street, label: Strasse, widget: string }

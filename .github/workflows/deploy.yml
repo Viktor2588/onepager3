@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -52,7 +52,7 @@ jobs:
         run: pnpm install
 
       - name: Build static site
-        run: NUXT_APP_BASE_URL=/onepager3/ pnpm build
+        run: NOINDEX=1 NUXT_APP_BASE_URL=/onepager3/ pnpm build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -4,58 +4,53 @@
       <p class="eyebrow">Rechtliches</p>
       <h1>Impressum</h1>
 
+      <!-- Quelle: eRecht24 Impressum-Generator (kostenlos). Quellenhinweis muss bleiben. -->
       <section>
-        <h2>Anbieter</h2>
         <p>
-          <strong>{{ company.legalName }}</strong><br>
-          Ansprechpartner: {{ company.contactPerson }}<br>
-          {{ company.street }}<br>
-          {{ company.city }}<br>
-          {{ company.country }}
+          Induva UG<br>
+          Obere Tränke 3<br>
+          63110 Rodgau
+        </p>
+        <p>
+          Handelsregister: HRB 142763<br>
+          Registergericht: Frankfurt am Main
+        </p>
+        <p>
+          <strong>Vertreten durch:</strong><br>
+          Bjoern Kratz
         </p>
       </section>
 
       <section>
         <h2>Kontakt</h2>
         <p>
-          Telefon: <a :href="company.phoneHref">{{ company.phoneDisplay }}</a><br>
-          E-Mail: <a :href="`mailto:${company.email}`">{{ company.email }}</a>
+          Telefon: <a href="tel:+4917621658217">+49 176 21658217</a><br>
+          E-Mail: <a href="mailto:info@induva.net">info@induva.net</a>
         </p>
       </section>
 
       <section>
-        <h2>Redaktionell verantwortlich</h2>
-        <p>{{ company.contactPerson }}</p>
-      </section>
-
-      <section>
-        <h2>Streitbeilegung</h2>
+        <h2>Umsatzsteuer-ID</h2>
         <p>
-          Die Europaeische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:
-          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
-            ec.europa.eu/consumers/odr
-          </a>.
-        </p>
-        <p>
-          Eine Teilnahme an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle erfolgt nicht.
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+          DE 463 177 523
         </p>
       </section>
 
       <section>
-        <h2>Hinweis zum aktuellen Stand</h2>
+        <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
         <p>
-          Diese V2 beseitigt sichtbare Platzhalter aus der vorherigen Version. Vor einem
-          verbindlichen Live-Betrieb sollten ladungsfaehige Anschrift sowie gegebenenfalls
-          register- und steuerrechtliche Pflichtangaben noch mit den finalen Unternehmensdaten abgeglichen werden.
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
         </p>
       </section>
+
+      <p>Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">eRecht24</a></p>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { company } from '~/data/site'
-
 useHead({
   title: 'Impressum - Induva UG',
   meta: [
