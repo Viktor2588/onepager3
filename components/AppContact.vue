@@ -22,16 +22,6 @@
             <p>{{ company.city }}, {{ company.country }}</p>
             <p>{{ company.hours }}</p>
           </article>
-
-          <article class="contact-card">
-            <h3>Wir helfen bei</h3>
-            <ul class="plain-list">
-              <li>Räumung und Entsorgung</li>
-              <li>Sicherstellung von Fahrzeugen</li>
-              <li>Verwertung von Fahrzeugen, Maschinen und Elektronik</li>
-              <li>Räumung von Immobilien</li>
-            </ul>
-          </article>
         </div>
       </div>
 
