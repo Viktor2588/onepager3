@@ -39,6 +39,7 @@
 
     <div class="container footer-bottom">
       <p>&copy; {{ currentYear }} {{ company.legalName }}. Alle Rechte vorbehalten.</p>
+      <p>Abbildungen sind Symbolbilder (KI-generiert).</p>
     </div>
   </footer>
 </template>
