@@ -21,15 +21,6 @@
         </div>
       </div>
 
-      <aside class="hero-panel">
-        <p class="eyebrow">Auf einen Blick</p>
-        <ul class="check-list">
-          <li>Räumung von Büro-, Lager- und Gewerbeflächen</li>
-          <li>Sicherstellung und Abholung von Fahrzeugen</li>
-          <li>Verwertung von Fahrzeugen, Baumaschinen und Elektronik</li>
-        </ul>
-      </aside>
-
       <AppReasons />
     </div>
   </section>

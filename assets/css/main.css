@@ -332,16 +332,23 @@ main {
   max-width: 760px;
 }
 
+.hero-content {
+  grid-template-columns: 1fr;
+}
+
 .hero-copy {
-  max-width: 46rem;
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero h1 {
   margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .hero-text {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
   line-height: 1.6;
   color: var(--text-muted);
 }
@@ -349,11 +356,11 @@ main {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.hero-panel,
 .mail-form-card,
 .reason-card,
 .service-card,
@@ -366,10 +373,6 @@ main {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-}
-
-.hero-panel {
-  padding: 1.5rem;
 }
 
 .hero-reasons {
