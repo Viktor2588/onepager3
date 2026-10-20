@@ -16,7 +16,7 @@
           <div class="service-card__body">
             <h3>{{ service.title }}</h3>
             <p>{{ service.description }}</p>
-            <p class="service-card__result">{{ service.result }}</p>
+            <p v-if="service.result" class="service-card__result">{{ service.result }}</p>
           </div>
         </article>
       </div>
