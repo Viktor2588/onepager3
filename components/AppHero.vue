@@ -12,7 +12,7 @@
         <p class="hero-text">
           Wir räumen Büros, Lager und Gewerbeflächen, stellen Fahrzeuge sicher und verwerten,
           was noch Wert hat – von Fahrzeugen und Baumaschinen bis zu Elektronik. Außerdem
-          bewerten wir Wohnungen und Gewerbeobjekte.
+          verwerten wir Immobilienbestände.
         </p>
 
         <div class="hero-actions">
