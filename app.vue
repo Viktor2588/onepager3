@@ -4,6 +4,7 @@
     <AppHeader />
     <NuxtPage />
     <AppFooter />
+    <AppCallDialog />
   </div>
 </template>
 

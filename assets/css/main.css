@@ -736,3 +736,49 @@ main {
     padding: 1.25rem;
   }
 }
+
+.call-dialog {
+  width: min(26rem, calc(100% - 2rem));
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
+  color: var(--text);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.call-dialog::backdrop {
+  background: rgba(8, 20, 14, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.call-dialog h2 {
+  margin: 0.25rem 0 1rem;
+}
+
+.call-dialog__number {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent-strong);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.call-dialog__actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.call-dialog__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
