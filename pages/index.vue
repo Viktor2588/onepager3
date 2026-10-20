@@ -3,7 +3,6 @@
     <AppHero />
     <AppTrustBar />
     <AppServices />
-    <AppReasons />
     <AppContact />
   </main>
 </template>

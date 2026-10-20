@@ -29,6 +29,8 @@
           <li>Verwertung von Fahrzeugen, Baumaschinen und Elektronik</li>
         </ul>
       </aside>
+
+      <AppReasons />
     </div>
   </section>
 </template>

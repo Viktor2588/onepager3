@@ -19,21 +19,17 @@
         <ul class="footer-list">
           <li v-for="service in services" :key="service.title">{{ service.title }}</li>
         </ul>
-      </div>
 
-      <div>
-        <p class="eyebrow">Seiten</p>
+        <p class="eyebrow footer-subheading">Seiten</p>
         <ul class="footer-list">
           <li><NuxtLink to="/#leistungen">Leistungen</NuxtLink></li>
           <li><NuxtLink to="/impressum">Impressum</NuxtLink></li>
           <li><NuxtLink to="/datenschutz">Datenschutz</NuxtLink></li>
         </ul>
       </div>
-    </div>
 
-    <div class="container footer-faq">
-      <p class="eyebrow">Häufige Fragen</p>
-      <div class="footer-faq__list">
+      <div>
+        <p class="eyebrow">Häufige Fragen</p>
         <details v-for="item in faqItems" :key="item.question" class="faq-item">
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>

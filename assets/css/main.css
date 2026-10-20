@@ -169,15 +169,8 @@ main {
   height: 1.3rem;
 }
 
-.footer-faq {
-  margin-top: 2.5rem;
-}
-
-.footer-faq__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  align-items: start;
+.footer-subheading {
+  margin-top: 2rem;
 }
 
 .section--surface {
@@ -368,7 +361,6 @@ main {
 .timeline-card,
 .contact-card,
 .industry-pill,
-.faq-item,
 .legal-card {
   background: var(--surface-soft);
   border: 1px solid var(--line);
@@ -378,6 +370,11 @@ main {
 
 .hero-panel {
   padding: 1.5rem;
+}
+
+.hero-reasons {
+  grid-column: 1 / -1;
+  scroll-margin-top: 6rem;
 }
 
 .check-list,
@@ -513,17 +510,24 @@ main {
 }
 
 .faq-item {
-  padding: 1rem 1.25rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
 }
 
 .faq-item summary {
   cursor: pointer;
-  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.faq-item[open] summary,
+.faq-item summary:hover {
   color: var(--text);
 }
 
 .faq-item p {
-  margin: 0.9rem 0 0;
+  margin: 0.5rem 0 0.25rem;
+  color: var(--text-muted);
 }
 
 .contact-layout {
@@ -672,7 +676,6 @@ main {
 
   .trust-grid,
   .card-grid,
-  .footer-faq__list,
   .timeline,
   .industry-list {
     grid-template-columns: 1fr;

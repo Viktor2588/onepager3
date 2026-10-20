@@ -1,24 +1,19 @@
 <template>
-  <section id="warum-induva" class="section section--compact">
-    <div class="container">
-      <div class="section-heading section-heading--compact">
-        <p class="eyebrow">Warum Induva</p>
-        <h2>Persönlich, direkt und zuverlässig.</h2>
-      </div>
+  <div id="warum-induva" class="hero-reasons">
+    <p class="eyebrow">Warum Induva</p>
 
-      <div class="reason-grid">
-        <article v-for="(reason, index) in reasons" :key="reason.title" class="reason-tile">
-          <span class="reason-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path v-for="d in icons[index % icons.length]" :key="d" :d="d" />
-            </svg>
-          </span>
-          <h3>{{ reason.title }}</h3>
-          <p>{{ reason.description }}</p>
-        </article>
-      </div>
+    <div class="reason-grid">
+      <article v-for="(reason, index) in reasons" :key="reason.title" class="reason-tile">
+        <span class="reason-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path v-for="d in icons[index % icons.length]" :key="d" :d="d" />
+          </svg>
+        </span>
+        <h3>{{ reason.title }}</h3>
+        <p>{{ reason.description }}</p>
+      </article>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
