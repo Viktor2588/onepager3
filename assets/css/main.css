@@ -574,6 +574,16 @@ main {
   resize: vertical;
 }
 
+/* Aufgeklappte Liste zeichnet der Browser selbst – dunkel erzwingen, sonst weiß auf weiß */
+.mail-form select {
+  color-scheme: dark;
+}
+
+.mail-form option {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
 .checkbox-field {
   grid-template-columns: auto 1fr;
   align-items: start;
