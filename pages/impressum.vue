@@ -7,7 +7,7 @@
       <!-- Quelle: eRecht24 Impressum-Generator (kostenlos). Quellenhinweis muss bleiben. -->
       <section>
         <p>
-          Induva UG<br>
+          Induva UG (haftungsbeschränkt)<br>
           Obere Tränke 3<br>
           63110 Rodgau
         </p>
