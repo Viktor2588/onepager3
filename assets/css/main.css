@@ -590,8 +590,13 @@ main {
 }
 
 .checkbox-field input {
-  width: 1rem;
-  margin-top: 0.2rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  padding: 0;
+  accent-color: var(--accent);
+  color-scheme: dark;
+  cursor: pointer;
 }
 
 .error-text {
