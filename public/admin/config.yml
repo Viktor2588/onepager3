@@ -62,7 +62,3 @@ collections:
             fields:
               - { name: question, label: Frage, widget: string }
               - { name: answer, label: Antwort, widget: text }
-          - name: realEstateBenefits
-            label: Immobilien – Vorteile
-            widget: list
-            field: { name: item, label: Vorteil, widget: string }

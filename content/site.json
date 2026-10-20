@@ -90,13 +90,7 @@
     },
     {
       "question": "Helfen Sie auch bei Immobilien?",
-      "answer": "Ja. Wir räumen Häuser, Wohnungen und Gewerbeobjekte vor Verkauf, Übergabe oder Neuvermietung. Mehr dazu auf unserer Immobilien-Seite."
+      "answer": "Ja. Wir bewerten Wohnungen, Häuser und Gewerbeobjekte – etwa vor Verkauf, Vermietung oder Übergabe."
     }
-  ],
-  "realEstateBenefits": [
-    "Räumung vor Verkauf, Übergabe oder Neuvermietung",
-    "Verwertung von Inventar, das noch Wert hat",
-    "Fachgerechte Entsorgung des Rests",
-    "Ein Ansprechpartner für Eigentümer und Verwalter"
   ]
 }

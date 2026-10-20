@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github-pages',
     prerender: {
-      routes: ['/', '/immobilien', '/impressum', '/datenschutz']
+      routes: ['/', '/impressum', '/datenschutz']
     }
   },
   app: {

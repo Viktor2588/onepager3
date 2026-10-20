@@ -7,6 +7,5 @@ export const {
   trustItems,
   services,
   reasons,
-  faqItems,
-  realEstateBenefits
+  faqItems
 } = site
