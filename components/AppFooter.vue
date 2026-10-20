@@ -38,7 +38,7 @@
     </div>
 
     <div class="container footer-bottom">
-      <p>&copy; {{ currentYear }} {{ company.brand }}. Alle Rechte vorbehalten.</p>
+      <p>&copy; {{ currentYear }} {{ company.legalName }}. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 </template>
