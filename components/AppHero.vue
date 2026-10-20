@@ -10,8 +10,9 @@
         <p class="eyebrow">Räumung · Entsorgung · Verwertung</p>
         <h1>Wir räumen, entsorgen und verwerten – zuverlässig und unkompliziert.</h1>
         <p class="hero-text">
-          Wir räumen Büros, Lager und Immobilien, stellen Fahrzeuge sicher und verwerten,
-          was noch Wert hat – von Fahrzeugen und Baumaschinen bis zu Elektronik.
+          Wir räumen Büros, Lager und Gewerbeflächen, stellen Fahrzeuge sicher und verwerten,
+          was noch Wert hat – von Fahrzeugen und Baumaschinen bis zu Elektronik. Außerdem
+          bewerten wir Wohnungen und Gewerbeobjekte.
         </p>
 
         <div class="hero-actions">
@@ -26,7 +27,6 @@
           <li>Räumung von Büro-, Lager- und Gewerbeflächen</li>
           <li>Sicherstellung und Abholung von Fahrzeugen</li>
           <li>Verwertung von Fahrzeugen, Baumaschinen und Elektronik</li>
-          <li>Räumung von Immobilien</li>
         </ul>
       </aside>
     </div>

@@ -25,7 +25,6 @@
         <p class="eyebrow">Seiten</p>
         <ul class="footer-list">
           <li><NuxtLink to="/#leistungen">Leistungen</NuxtLink></li>
-          <li><NuxtLink to="/immobilien">Immobilien</NuxtLink></li>
           <li><NuxtLink to="/impressum">Impressum</NuxtLink></li>
           <li><NuxtLink to="/datenschutz">Datenschutz</NuxtLink></li>
         </ul>

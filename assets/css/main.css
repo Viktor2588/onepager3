@@ -266,12 +266,12 @@ main {
   gap: 1rem;
 }
 
-.site-nav a {
+.site-nav a:not(.button) {
   text-decoration: none;
   color: var(--text-muted);
 }
 
-.site-nav a:hover {
+.site-nav a:not(.button):hover {
   color: var(--text);
 }
 
@@ -343,8 +343,13 @@ main {
   max-width: 46rem;
 }
 
+.hero h1 {
+  margin-bottom: 2rem;
+}
+
 .hero-text {
-  font-size: 1.125rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.6;
   color: var(--text-muted);
 }
 
