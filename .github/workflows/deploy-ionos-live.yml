@@ -83,6 +83,12 @@ jobs:
       - name: Prepare .htaccess
         run: |
           cat > .output/public/.htaccess <<'HTACCESS'
+          # Alles auf https://induva.net (ohne www) umleiten
+          RewriteEngine On
+          RewriteCond %{HTTPS} off [OR]
+          RewriteCond %{HTTP_HOST} ^www\. [NC]
+          RewriteRule ^ https://induva.net%{REQUEST_URI} [R=301,L]
+
           <IfModule mod_headers.c>
             # Inhalte (HTML, Nuxt-Payloads, CMS-Bilder): immer beim Server revalidieren
             <FilesMatch "\.(html|json|jpe?g|png|webp|svg|gif|ico)$">

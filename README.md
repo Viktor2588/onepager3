@@ -56,7 +56,8 @@ NUXT_APP_BASE_URL=/onepager3/ pnpm build
 - Live: Workflow `Deploy to IONOS (Live)` (`.github/workflows/deploy-ionos-live.yml`)
   wird nur manuell gestartet (Actions → Run workflow) und synchronisiert ohne
   Passwortschutz nach `/induva-live/`. Die Live-Domain zeigt in IONOS auf
-  diesen Ordner; `s1099317312.online.de` bleibt Testumgebung.
+  diesen Ordner (`https://induva.net`, http und www leiten per 301 dorthin um);
+  `s1099317312.online.de` bleibt Testumgebung.
 - Fuer IONOS muessen die Repository-Secrets `IONOS_SFTP_USERNAME` und
   `IONOS_SFTP_PASSWORD` konfiguriert sein.
 

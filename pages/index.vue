@@ -14,6 +14,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: company.brand,
+  url: 'https://induva.net',
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: company.phoneDisplay,
