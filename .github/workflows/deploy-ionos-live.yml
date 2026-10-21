@@ -1,0 +1,122 @@
+name: Deploy to IONOS (Live)
+
+# ponytail: nur manuell – Live wird bewusst per Knopfdruck freigegeben
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ionos-live
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> "$GITHUB_ENV"
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate production site
+        run: pnpm generate
+        env:
+          NUXT_APP_BASE_URL: /
+
+      - name: Install deployment tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lftp
+
+      - name: Verify IONOS host key
+        env:
+          IONOS_SFTP_HOST: access-5020611492.webspace-host.com
+          IONOS_SFTP_PORT: '22'
+          IONOS_ED25519_FINGERPRINT: SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q
+        run: |
+          mkdir --parents "$HOME/.ssh"
+          ssh-keyscan \
+            -p "$IONOS_SFTP_PORT" \
+            -t ed25519 \
+            "$IONOS_SFTP_HOST" \
+            2>/dev/null > "$RUNNER_TEMP/ionos_known_hosts"
+
+          actual_fingerprint="$(
+            ssh-keygen -lf "$RUNNER_TEMP/ionos_known_hosts" -E sha256 |
+            awk '{print $2}'
+          )"
+
+          if [ "$actual_fingerprint" != "$IONOS_ED25519_FINGERPRINT" ]; then
+            echo "::error::The IONOS SFTP host key does not match the expected fingerprint."
+            exit 1
+          fi
+
+          cp "$RUNNER_TEMP/ionos_known_hosts" "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Prepare .htaccess
+        run: |
+          cat > .output/public/.htaccess <<'HTACCESS'
+          <IfModule mod_headers.c>
+            # Inhalte (HTML, Nuxt-Payloads, CMS-Bilder): immer beim Server revalidieren
+            <FilesMatch "\.(html|json|jpe?g|png|webp|svg|gif|ico)$">
+              Header set Cache-Control "no-cache"
+            </FilesMatch>
+            # Gehashte Build-Assets: ewig cachen, Dateiname aendert sich bei jedem Build
+            <FilesMatch "\.(js|css|woff2?)$">
+              Header set Cache-Control "public, max-age=31536000, immutable"
+            </FilesMatch>
+          </IfModule>
+          HTACCESS
+
+      - name: Upload site over SFTP
+        env:
+          IONOS_SFTP_HOST: access-5020611492.webspace-host.com
+          IONOS_SFTP_PORT: '22'
+          IONOS_SFTP_USERNAME: ${{ secrets.IONOS_SFTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.IONOS_SFTP_PASSWORD }}
+        run: |
+          if [ -z "$IONOS_SFTP_USERNAME" ] || [ -z "$LFTP_PASSWORD" ]; then
+            echo "::error::IONOS SFTP credentials are not configured."
+            exit 1
+          fi
+
+          lftp \
+            --user "$IONOS_SFTP_USERNAME" \
+            --env-password \
+            -p "$IONOS_SFTP_PORT" \
+            "sftp://${IONOS_SFTP_HOST}" <<'LFTP_COMMANDS'
+          set cmd:fail-exit yes
+          set net:max-retries 2
+          set net:timeout 20
+          set sftp:auto-confirm no
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+          mirror --reverse --delete --parallel=4 --verbose --exclude-glob .well-known/ .output/public/ ./induva-live/
+          bye
+          LFTP_COMMANDS

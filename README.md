@@ -53,6 +53,10 @@ NUXT_APP_BASE_URL=/onepager3/ pnpm build
   und synchronisiert den Inhalt von `.output/public/` in das Verzeichnis
   `/induva-website/` auf dem Webspace. Das Deployment erzeugt voruebergehend
   eine serverseitige Apache-Basic-Auth-Konfiguration fuer `Dark` / `Dante`.
+- Live: Workflow `Deploy to IONOS (Live)` (`.github/workflows/deploy-ionos-live.yml`)
+  wird nur manuell gestartet (Actions → Run workflow) und synchronisiert ohne
+  Passwortschutz nach `/induva-live/`. Die Live-Domain zeigt in IONOS auf
+  diesen Ordner; `s1099317312.online.de` bleibt Testumgebung.
 - Fuer IONOS muessen die Repository-Secrets `IONOS_SFTP_USERNAME` und
   `IONOS_SFTP_PASSWORD` konfiguriert sein.
 
